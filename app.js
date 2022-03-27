@@ -6,20 +6,39 @@
 
 const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
+const greeting = document.querySelector('#greeting');
+
+const HIDDEN_CLASS_NAME = 'hidden';
+const USERNAME_KEY = 'userName';
 
 function onLoginSubmit(event) {
     event.preventDefault(); //브라우저의 기본 동작을 막아주는 함수임.
     //console.log(event);
     const userName = loginInput.value;
+    loginForm.classList.add(HIDDEN_CLASS_NAME);
+    //정보 입력후 입력필드 hidden
     console.log(userName);
+
+    //로컬 스토리지에 이름 저장하기
+    localStorage.setItem(USERNAME_KEY, userName);
+
+    paintGreetings(userName);
 }
 
-loginForm.addEventListener('submit', onLoginSubmit);
+function paintGreetings(username) {
+    //글자 써주는 부분을 함수화.. !
+    greeting.innerText = `Hello ? ${username}, Good Bye`;
+    greeting.classList.remove(HIDDEN_CLASS_NAME);
+}
 
-// const link = document.querySelector('a');
-// function handleLinkClick(event) {
-//     // alert('click!!');
-//     console.dir(event);
-//     event.preventDefault();
-// }
-// link.addEventListener('click', handleLinkClick);
+const savedUserName = localStorage.getItem(USERNAME_KEY);
+
+if (savedUserName === null) {
+    //show Main Form
+    loginForm.classList.remove(HIDDEN_CLASS_NAME);
+    console.log(loginForm.classList.contains(HIDDEN_CLASS_NAME));
+    loginForm.addEventListener('submit', onLoginSubmit);
+} else {
+    //show Hello Form
+    paintGreetings(savedUserName);
+}
