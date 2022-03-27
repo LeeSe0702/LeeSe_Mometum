@@ -4,12 +4,12 @@
 
 // loginButton.addEventListener('click', onLoginButtonClick);
 
-const loginForm = document.querySelector('#login-form');
-const loginInput = document.querySelector('#login-form input');
-const greeting = document.querySelector('#greeting');
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CLASS_NAME = 'hidden';
-const USERNAME_KEY = 'userName';
+const HIDDEN_CLASS_NAME = "hidden";
+const USERNAME_KEY = "userName";
 
 function onLoginSubmit(event) {
     event.preventDefault(); //브라우저의 기본 동작을 막아주는 함수임.
@@ -27,7 +27,7 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
     //글자 써주는 부분을 함수화.. !
-    greeting.innerText = `Hello ? ${username}, Good Bye`;
+    greeting.innerText = `Hello,  ${username} ? Good Night :)`;
     greeting.classList.remove(HIDDEN_CLASS_NAME);
 }
 
@@ -37,7 +37,7 @@ if (savedUserName === null) {
     //show Main Form
     loginForm.classList.remove(HIDDEN_CLASS_NAME);
     console.log(loginForm.classList.contains(HIDDEN_CLASS_NAME));
-    loginForm.addEventListener('submit', onLoginSubmit);
+    loginForm.addEventListener("submit", onLoginSubmit);
 } else {
     //show Hello Form
     paintGreetings(savedUserName);
