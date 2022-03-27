@@ -17,7 +17,7 @@ function onLoginSubmit(event) {
     const userName = loginInput.value;
     loginForm.classList.add(HIDDEN_CLASS_NAME);
     //정보 입력후 입력필드 hidden
-    console.log(userName);
+    // console.log(userName);
 
     //로컬 스토리지에 이름 저장하기
     localStorage.setItem(USERNAME_KEY, userName);
@@ -36,7 +36,7 @@ const savedUserName = localStorage.getItem(USERNAME_KEY);
 if (savedUserName === null) {
     //show Main Form
     loginForm.classList.remove(HIDDEN_CLASS_NAME);
-    console.log(loginForm.classList.contains(HIDDEN_CLASS_NAME));
+    // console.log(loginForm.classList.contains(HIDDEN_CLASS_NAME));
     loginForm.addEventListener("submit", onLoginSubmit);
 } else {
     //show Hello Form
