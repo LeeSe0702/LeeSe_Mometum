@@ -27,7 +27,7 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
     //글자 써주는 부분을 함수화.. !
-    greeting.innerText = `Hello,  ${username} ? Good Night :)`;
+    greeting.innerText = `Hi,  ${username}.  Have a Good Day :)`;
     greeting.classList.remove(HIDDEN_CLASS_NAME);
 }
 

@@ -10,11 +10,12 @@ function saveToDos() {
 
 //삭제버튼 구현
 function handleVoidButton(event) {
-    console.log("lalalall");
-    console.log(event.target.parentElement);
+    console.log("To-Do List 삭제 - 1");
     const li = event.target.parentElement;
-    //리스트에서 지우기전에 로컬저장소에서 지우자. !
-    console.log(li.id);
+    //리스트에서 지우기전에 로컬 저장소에서 지우자. !
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+    //필터 처리로, False일 경우 지운다.
+    saveToDos();
     li.remove();
 }
 
