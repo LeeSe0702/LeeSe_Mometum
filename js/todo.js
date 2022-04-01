@@ -13,8 +13,7 @@ function handleVoidButton(event) {
     console.log("To-Do List 삭제 - 1");
     const li = event.target.parentElement;
     //리스트에서 지우기전에 로컬 저장소에서 지우자. !
-    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-    //필터 처리로, False일 경우 지운다.
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); //필터 처리로, False일 경우 지운다.
     saveToDos();
     li.remove();
 }
@@ -27,11 +26,10 @@ function paintToDo(newToDo) {
     //To-Do List에서 삭제하고픈 버튼 생성하기
     const toDoVoidButton = document.createElement("button");
     toDoVoidButton.innerText = "❌";
+    toDoVoidButton.addEventListener("click", handleVoidButton);
 
     toDoListLi.id = newToDo.id;
     toDoListSpan.innerText = newToDo.text;
-
-    toDoVoidButton.addEventListener("click", handleVoidButton);
 
     toDoListLi.appendChild(toDoListSpan);
     toDoListLi.appendChild(toDoVoidButton);
