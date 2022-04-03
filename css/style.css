@@ -33,6 +33,7 @@
     text-decoration: underline;
     position: relative;
     margin-bottom: 5px;
+    text-shadow: 1.5px 1.5px 1.5px #000;
 }
 #login-input::placeholder {
     color: aliceblue;
@@ -40,13 +41,14 @@
 
 #login-button {
     background-color: beige;
-    font-size: 10pt;
+    font-size: 13pt;
     outline: none;
     color: aliceblue;
     background: none;
-    border: 1;
+    border: 0;
     border-radius: 25%;
     position: relative;
+    text-shadow: 1.5px 1.5px 1.5px #000;
 }
 
 #clock {
