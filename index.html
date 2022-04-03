@@ -8,25 +8,29 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
+        <!-- 이름입력 -->
         <form id="login-form" class="hidden">
-            <input required maxlength="15" type="text" placeholder="What is Your Name ?" />
-            <button>Join In</button>
+            <input id="login-input" required maxlength="15" type="text" placeholder="Hello, What is Your Name ?" /> <br />
+            <button id="login-button">Continue</button>
         </form>
         <h1 id="greeting" class="hidden"></h1>
-        <h2 id="clock">00:00:00</h2>
-        <!-- <a href="https://nomadcoders.co">Go to Course</a> -->
-        <div id="quote">
+        <!-- 시계 -->
+        <h2 id="clock" class="hidden">00:00</h2>
+        <!-- 날씨 -->
+        <div id="weather" class="hidden">
             <span></span>
             <span></span>
         </div>
-        <div id="weather">
+        <!-- 명언 -->
+        <div id="quote" class="hidden">
             <span></span>
             <span></span>
         </div>
-        <form id="todo-form">
+        <!-- TO Do List -->
+        <form id="todo-form" class="hidden">
             <input type="text" placeholder="Wirte a To Do and Press Enter :)" />
         </form>
-        <ul id="todo-list"></ul>
+        <ul id="todo-list" class="hidden"></ul>
 
         <script src="js/greetings.js"></script>
         <script src="js/clock.js"></script>

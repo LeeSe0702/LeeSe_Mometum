@@ -8,6 +8,12 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 
+const clockDoc = document.querySelector("#clock");
+const quoteDoc = document.querySelector("#quote");
+const weatherDoc = document.querySelector("#weather");
+const todoFormDoc = document.querySelector("#todo-form");
+const todoListDoc = document.querySelector("#todo-list");
+
 const HIDDEN_CLASS_NAME = "hidden";
 const USERNAME_KEY = "userName";
 
@@ -27,8 +33,13 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
     //글자 써주는 부분을 함수화.. !
-    greeting.innerText = `Hi,  ${username}.  Have a Good Day :)`;
+    greeting.innerText = `안녕?  ${username}.  `;
     greeting.classList.remove(HIDDEN_CLASS_NAME);
+    clockDoc.classList.remove(HIDDEN_CLASS_NAME);
+    quoteDoc.classList.remove(HIDDEN_CLASS_NAME);
+    weatherDoc.classList.remove(HIDDEN_CLASS_NAME);
+    todoFormDoc.classList.remove(HIDDEN_CLASS_NAME);
+    todoListDoc.classList.remove(HIDDEN_CLASS_NAME);
 }
 
 const savedUserName = localStorage.getItem(USERNAME_KEY);

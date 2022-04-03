@@ -13,10 +13,10 @@ function ongeoOk(position) {
             const cityContainer = document.querySelector("#weather span:last-child");
             const name = data.name;
             const weather = data.weather[0].main;
-            const temp = data.main.temp;
+            const temp = Math.round(data.main.temp); //온도 반올림
 
-            weatherContainer.innerText = `${weather} / ${temp} 도`;
-            cityContainer.innerText = name;
+            weatherContainer.innerText = `${weather}`;
+            cityContainer.innerText = `${name} ${temp} °C`;
 
             // console.log(data.name, data.weather[0].main);
         });
