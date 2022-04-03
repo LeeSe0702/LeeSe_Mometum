@@ -18,7 +18,7 @@
     text-align: center;
     color: aliceblue;
     position: relative;
-    top: 800px;
+    top: 400px;
     z-index: 1000;
 }
 
@@ -62,7 +62,7 @@
 }
 
 #greeting {
-    margin-top: 500px;
+    margin-top: 350px;
     text-align: center;
     color: aliceblue;
     position: relative;
@@ -97,6 +97,9 @@
     background: none;
     width: 100%;
     outline: none;
+    text-shadow: 1.5px 1.5px 1.5px #000;
+    font-size: 13pt;
+    text-decoration: underline;
 }
 
 #todo-form input::placeholder {
