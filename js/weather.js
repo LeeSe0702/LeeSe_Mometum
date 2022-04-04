@@ -4,8 +4,8 @@ function ongeoOk(position) {
     const latit = position.coords.latitude;
     const longi = position.coords.longitude;
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latit}&lon=${longi}&appid=${API_KEY}&units=metric`;
-    console.log("너의 위치는", latit, longi);
-    console.log(API_URL);
+    // console.log("너의 위치는", latit, longi);
+    // console.log(API_URL);
     fetch(API_URL)
         .then((response) => response.json())
         .then((data) => {
@@ -13,7 +13,7 @@ function ongeoOk(position) {
             const cityContainer = document.querySelector("#weather span:last-child");
             const name = data.name;
             const weather = data.weather[0].main;
-            const temp = Math.round(data.main.temp); //온도 반올림
+            const temp = Math.round(data.main.temp); //기온 반올림 추가
 
             weatherContainer.innerText = `${weather}`;
             cityContainer.innerText = `${name} ${temp} °C`;
