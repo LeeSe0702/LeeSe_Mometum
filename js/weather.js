@@ -3,16 +3,16 @@ const API_KEY = "9d19c7ff8db30f80a1b449e38032a416";
 function ongeoOk(position) {
     const latit = position.coords.latitude;
     const longi = position.coords.longitude;
-    const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latit}&lon=${longi}&appid=${API_KEY}&units=metric`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latit}&lon=${longi}&units=metric&lang=kr&appid=${API_KEY}`;
     // console.log("너의 위치는", latit, longi);
-    // console.log(API_URL);
+    console.log(API_URL);
     fetch(API_URL)
         .then((response) => response.json())
         .then((data) => {
             const weatherContainer = document.querySelector("#weather span:first-child");
             const cityContainer = document.querySelector("#weather span:last-child");
             const name = data.name;
-            const weather = data.weather[0].main;
+            const weather = data.weather[0].description;
             const temp = Math.round(data.main.temp); //기온 반올림 추가
 
             weatherContainer.innerText = `${weather}`;
