@@ -12,7 +12,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    filter: brightness(40%);
+    /* filter: 밝기조정할 때 */
 }
 #login-form {
     text-align: center;
